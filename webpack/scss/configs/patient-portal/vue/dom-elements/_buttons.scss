@@ -1,0 +1,73 @@
+button,
+.btn {
+	border: 1px solid transparent;
+	border-radius: 0;
+	display: inline;
+	font-family: $pp-font-primary;
+	font-weight: $font-weight-light;
+	font-size: 15px;
+	text-decoration: none; // reset anchor default styles.h
+	transition: background-color $pp-animation-generic;
+
+	// All interactions.
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+
+	// When disabled.
+	&:disabled {
+		background-color: $pp-disabled-bg;
+		color: $pp-disabled-text;
+
+		&:hover,
+		&:focus {
+			background-color: $pp-disabled-bg;
+			color: $pp-disabled-text;
+		}
+	}
+}
+
+.btn {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+
+	&--primary {
+		background-color: $pp-primary-blue;
+
+		&:hover,
+		&:focus {
+			background-color: darken($pp-primary-blue, 5%);
+			color: $white;
+		}
+	}
+
+	&--secondary {
+		background-color: $pp-white;
+		border: 1px solid $pp-primary-blue;
+		color: $pp-primary-blue;
+
+		&:hover,
+		&:focus {
+			background-color: darken($pp-white, 5%);
+			color: $pp-primary-blue;
+		}
+	}
+
+	&--tertiary {
+		background-color: $pp-primary-yellow;
+		border-color: $pp-primary-yellow;
+		color: $pp-black;
+
+		&:hover,
+		&:focus {
+			background-color: darken($pp-primary-yellow, 5%);
+			color: $pp-black;
+		}
+	}
+
+	&__icon {
+		margin-right: 10px;
+	}
+}

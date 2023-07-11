@@ -1,0 +1,13 @@
+.main {
+	font-family: $pp-font-primary;
+	margin: 0 auto;
+	max-width: $pp-body-max-width;
+	width: 100%;
+
+	@include media-breakpoint-down($pp-main-breakpoint) {
+		padding: $pp-main-padding-sm 0;
+	}
+	@include media-breakpoint-up($pp-main-breakpoint) {
+		padding: $pp-main-padding-lg 0;
+	}
+}

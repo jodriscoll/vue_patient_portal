@@ -1,0 +1,155 @@
+$form-row-horizontal-spacer: 20px;
+
+.settings-form {
+	display: flex;
+	width: 100%;
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	&__form-row {
+		border-bottom: 2px solid $pp-disabled-bg;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		padding: $form-row-horizontal-spacer 0;
+		position: relative;
+	}
+
+	&__edit {
+		color: $pp-primary-blue;
+		cursor: pointer;
+		display: block;
+		font-size: 16px;
+		padding: 5px;
+		position: absolute;
+		right: 0;
+		text-decoration: underline;
+		z-index: 2;
+	}
+
+	&__title {
+		color: $black;
+		font-size: 24px;
+		font-weight: $font-weight-medium;
+		margin-bottom: 40px;
+		margin-top: 0;
+		width: 100%;
+
+		// The second heading on the page, will likely be within the body/content.
+		&:nth-of-type(n+2) {
+			margin-top: 50px;
+		}
+
+		// The next element is likely a form-row, so avoid it having excess top padding.
+		+ div {
+			padding-top: 0;
+		}
+	}
+
+	&__edit {
+		color: $pp-primary-blue;
+		cursor: pointer;
+		display: block;
+		font-size: 16px;
+		position: absolute;
+		right: 0;
+		text-decoration: underline;
+		z-index: 2;
+	}
+
+	&__label {
+		color: $black;
+		font-size: 18px;
+		font-weight: $font-weight-medium;
+		margin-bottom: 5px;
+		position: relative;
+		width: 100%;
+	}
+
+	&__input {
+		display: inline-flex;
+		border: 1px solid white;
+		font-family: $pp-font-primary;
+		font-size: 16px;
+		font-weight: $font-weight-light;
+		padding: 0;
+		width: 100%;
+
+		// When disabled.
+		&[disabled] {
+			background-color: transparent;
+			border-color: transparent;
+			//color: $pp-disabled-text;
+		}
+
+		// Try to get the two inputs on the same line, side-by-side.
+		&.first-name,
+		&.last-name {
+			display: inline-flex;
+			width: auto;
+		}
+	}
+
+	&__select {
+		margin-right: auto;
+
+		@include media-breakpoint-down($pp-main-breakpoint) {
+			font-size: 16px;
+		}
+		@include media-breakpoint-up($pp-main-breakpoint) {
+			font-size: 16px;
+		}
+
+		select {
+			background-color: transparent;
+			border: none;
+			color: $black;
+			font-family: $pp-font-primary;
+			font-size: 16px;
+			font-weight: $font-weight-light;
+			padding: 0;
+			width: 100%;
+			-webkit-appearance: none;
+
+			&::-ms-expand {
+				display: none;
+			}
+
+			&[disabled] {
+				color: $pp-disabled-text;
+			}
+		}
+
+		option {
+			&[disabled] {
+				color: $pp-disabled-text;
+			}
+		}
+	}
+
+	&__submit {
+		background-color: $pp-primary-blue;
+		border: 0;
+		border-radius: 0;
+		font-family: $pp-font-primary;
+		font-size: 15px;
+		margin-left: auto;
+		margin-top: 30px;
+		transition: background-color $pp-animation-generic,
+		            color $pp-animation-generic;
+		width: auto;
+
+		&[disabled] {
+			color: rgba($white, .3);
+
+			&:hover,
+			&:focus {
+				text-decoration: none;
+			}
+		}
+	}
+}

@@ -1,0 +1,8 @@
+.grid-wrapper {
+	width: 100%;
+
+	@include media-breakpoint-up($pp-main-breakpoint) {
+		display: inline-grid;
+		grid-row-gap: 10px;
+	}
+}

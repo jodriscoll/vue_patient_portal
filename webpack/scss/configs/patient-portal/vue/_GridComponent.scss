@@ -1,0 +1,35 @@
+.grid-component {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+
+	&__header {
+		align-items: center;
+		display: flex;
+		flex-direction: row;
+		padding: 6px 14px;
+	}
+
+	&__header-icon {
+		display: block;
+		height: 15px;
+		margin-right: 10px;
+		width: 15px;
+	}
+
+	&__header-title {
+		color: $pp-black;
+		display: block;
+		font-size: 14px;
+		font-weight: $font-weight-light;
+	}
+
+	&__window {
+		background-color: $pp-white;
+		padding: 20px;
+
+		&.expand {
+			height: 100%;
+		}
+	}
+}

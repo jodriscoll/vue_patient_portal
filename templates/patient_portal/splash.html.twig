@@ -1,0 +1,95 @@
+{% extends 'base.html.twig' %}
+
+{% if app.flashes('success') is not empty %}
+    {% set insuranceFormCompleted = true %}
+{% else %}
+    {% set insuranceFormCompleted = false %}
+{% endif %}
+
+{% block title %}Patient Portal - Welcome{% endblock %}
+{% block meta_title %}Patient Portal | Rehab.com{% endblock %}
+{% block meta_description %}Welcome to the Rehab.com Patient Portal where you can schedule a free facility tour, see treatment costs and read verified patient reviews.{% endblock %}
+{% block og_type %}website{% endblock %}
+{% block og_title %}Patient Portal Dashboard{% endblock %}
+{% block og_description %}Schedule a free facility tour, see treatment costs and read verified patient reviews.{% endblock %}
+{% block meta_title_twitter %}Patient Portal Dashboard{% endblock %}
+{% block meta_description_twitter %}Schedule a free facility tour, see treatment costs and read verified patient reviews.{% endblock %}
+
+
+{% block stylesheets %}
+    <link rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500&display=swap"
+          as="style"
+          onload="this.onload=null;this.rel='stylesheet'"/>
+    <noscript>
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500&display=swap"
+              type="text/css"/>
+    </noscript>
+    <link rel="stylesheet" href="{{ asset('build/patient-portal-vue.css') }}">
+{% endblock %}
+
+{% block header_scripts %}
+    {# Reset. #}
+{% endblock %}
+
+{% block header %}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+                "@id": "{{ 'project.url'|trans~'/'}}patient",
+                "name": "Rehab.com Patient Splash"
+            }
+        }]
+    }
+    </script>
+    {% include 'home/structured_data/_home.html.twig'  with {
+        'title': 'Patient Portal | Rehab.com',
+        'caption': 'Welcome to the Rehab.com Patient Portal where you can schedule a free facility tour, see treatment costs and read verified patient reviews. ',
+        'image': 'https://www.rehab.com/assets/images/v2/us/homepage/hotlink-ok/rehab_com_og.jpg',
+        'url': app.request.uri
+    } only %}
+{% endblock %}
+
+{% block footer %}
+    {# Reset. #}
+{% endblock %}
+
+{% block javascripts %}
+    {# Parameters available:
+        'noIndexTag' => true,
+        'userFirstName' => $userFirstName,
+        'userLastName' => $userLastName,
+        'userEmail' => $userEmail,
+        'userSex' => $userSex,
+        'userDob' => $userDob,
+        'userSeekingCareFor' => $userSeekingCareFor,
+        'userHelpWith' => $userHelpWith,
+        'userUrgency' => $userUrgency,
+        'userVertical' => $userVertical,
+        'userPayment' => $userPayment,
+        'userLocation' => $userLocation,
+        'userInsurancePlan' => $userInsurancePlan,
+        'userInsuranceMemberId' => $userInsuranceMemberId,
+        'search_type' => 'PatientPortal',
+        'overrideNumber' => '',
+    #}
+    <div id="userData"
+         data-usr-first-name="{{ userFirstName }}"
+         data-usr-last-name="{{ userLastName }}"
+         data-usr-facility="{{ userVertical }}"
+         data-usr-dob="{{ userDob }}"
+         data-usr-sex="{{ userSex }}"
+         data-usr-vertical="{{ userVertical }}"
+         data-ins-verified="{{ insuranceFormCompleted }}"
+         data-case-care-for="{{ userSeekingCareFor }}"
+         data-case-urgency="{{ userUrgency }}"
+         data-case-help-with="{{ userHelpWith }}"
+         data-case-payment="{{ userPayment }}"
+         data-case-location="{{ userLocation }}"></div>
+{% endblock %}

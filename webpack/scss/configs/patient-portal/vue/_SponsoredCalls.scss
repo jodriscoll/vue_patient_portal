@@ -1,0 +1,28 @@
+$meet-advisor-thumbnail-desktop: 120px;
+$meet-advisor-thumbnail-mobile: ceil( ($meet-advisor-thumbnail-desktop / 1.72) + 2 );
+
+.sponsored-calls {
+	display: grid;
+	width: 100%;
+
+	&__ctas {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		width: 100%;
+	}
+
+	&__cta {
+		margin-top: 30px;
+		width: auto;
+
+		@include media-breakpoint-up($pp-main-breakpoint) {
+			min-width: 165px;
+		}
+
+		// Starting at the second instance...
+		&:nth-of-type(n+2) {
+			margin-left: $pp-button-group-spacer;
+		}
+	}
+}

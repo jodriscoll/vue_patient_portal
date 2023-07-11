@@ -1,0 +1,75 @@
+$pp-notification: "notification";
+$pp-success-colors: (
+	textColor: #155724,
+	backgroundColor: #d4edda,
+	borderColor: #c3e6cb
+);
+$pp-error-colors: (
+	textColor: #721c24,
+	backgroundColor: #f8d7da,
+	borderColor: #f5c6cb
+);
+
+.#{$pp-notification} {
+	box-shadow: $pp-box-shadow-normal;
+	display: block;
+	left: 50%;
+	position: fixed;
+	top: 10px;
+	transform: translateX(-50%);
+	width: 95%;
+	z-index: 99;
+
+	&__content {
+		background-color: $pp-placeholder;
+		border: 1px solid transparent;
+		color: $pp-black;
+		font-family: $pp-font-primary;
+		font-size: 13px;
+		font-weight: $font-weight-light;
+		line-height: 1.4;
+		margin: 0;
+		padding: 12px 20px;
+		position: relative;
+	}
+
+	&__success {
+		background-color: map-get($pp-success-colors, backgroundColor);
+		border-color: map-get($pp-success-colors, borderColor);
+		color: map-get($pp-success-colors, textColor);
+	}
+
+	&__error {
+		background-color: map-get($pp-error-colors, backgroundColor);
+		border-color: map-get($pp-error-colors, borderColor);
+		color: map-get($pp-error-colors, textColor);
+	}
+
+	&[data-dismissable="true"] {
+		.#{$pp-notification}__content {
+			padding-right: 4rem;
+		}
+
+		.#{$pp-notification}__close {
+			background-color: transparent;
+			border: 0;
+			color: inherit;
+			cursor: pointer;
+			font-size: 20px;
+			font-weight: inherit;
+			height: 100%;
+			opacity: .75;
+			padding: 5px 20px;
+			position: absolute;
+			right: 0;
+			top: 0;
+			transition: opacity $pp-animation-generic;
+			z-index: 2;
+
+			&:hover,
+			&:focus {
+				opacity: 1;
+			}
+		}
+	}
+}

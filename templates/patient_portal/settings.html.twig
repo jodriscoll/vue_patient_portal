@@ -1,0 +1,359 @@
+{% extends 'base.html.twig' %}
+{# Define the body class. #}
+{% set bodyclass = 'portal-settings' %}
+{# Control what shouldn't show based on MVP. #}
+{% set phase2 = false %}
+{# Control the support for the burger menu. #}
+{% set burger_menu = false %}
+
+{% block title %}Patient Portal – Settings | Rehab.com{% endblock %}
+
+{% block stylesheets %}
+    <link rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500&display=swap"
+          as="style"
+          onload="this.onload=null;this.rel='stylesheet'"/>
+    <noscript>
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500&display=swap"
+              type="text/css"/>
+    </noscript>
+    <link rel="stylesheet" href="{{ asset('build/patient-portal-symphony.css') }}">
+    {% if burger_menu %}
+        <link rel="preload"  as="style" onload="this.onload=null;this.rel='stylesheet'" href="{{ asset('build/footer.css') }}">
+        <link rel="preload" href="{{ asset('build/app_defer.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="{{ asset('build/app_defer.css') }}"></noscript>
+        <link rel="stylesheet" href="{{ asset('build/style.css') }}">
+        <noscript><link rel="stylesheet" href="{{ asset('build/footer.css') }}"></noscript>
+        <link rel="preload" href="{{ asset('assets/css/menu-mobile.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="{{ asset('assets/css/menu-mobile.css') }}"></noscript>
+    {% endif %}
+{% endblock %}
+
+{% block header_scripts %}
+    {# Reset. #}
+{% endblock %}
+
+{% block header %}
+    <header class="header">
+        <div class="header__wrapper">
+            <div class="header__column">
+                <div>
+                    {% if burger_menu %}
+                        <div class="burger-menu">
+                            <button class="burger-menu__button">+</button>
+                        </div>
+                    {% endif %}
+                    <a href="https://www.rehab.com/"
+                       class="header-logo"
+                       title="Visit Rehab.com">
+                        <img src="{{ asset('/assets/images/v2/us/homepage/logo_home.svg')}}" class="logo" alt="Rehab.com logo" height="32" width="185" />
+                    </a>
+                </div>
+            </div>
+            <div class="header__column">
+                <nav class="navbar">
+                    <ul class="navbar__list">
+                        <li class="navbar__list-item">
+                            <a href="/patient#plan-options" class="navbar__link" title="My Plan options">My Plan</a>
+                        </li>
+                        <li class="navbar__list-item">
+                            <a href="/patient#insurance-verify" class="navbar__link" title="Verify my insurance">Verify Insurance</a>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown__toggle"
+                               href="#"
+                               id="navbarUserDropdown"
+                               role="button"
+                               data-toggle="dropdown"
+                               aria-haspopup="true"
+                               aria-expanded="false">{{ userFirstName }}</a>
+                            <div class="dropdown__menu" id="navbarUserMenu" aria-labelledby="navbarUserDropdown">
+                                <a href="/patient" class="dropdown__link" title="View your Patient Portal">Dashboard</a>
+                                <div class="dropdown__divider" tabindex="-1"></div>
+                                <a href="/logout" class="dropdown__logout" title="Log out of your account">Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+{% block body %}
+    {% if burger_menu %}
+        {{ include('burger_menu/index.html.twig') }}
+    {% endif %}
+
+    <div class="portal-settings__wrapper">
+        <aside class="settings-sidebar">
+            <nav class="settings-sidebar__navigation">
+                <ul class="settings-sidebar__list">
+                    <li class="settings-sidebar__list-item">
+                        <a href="#" class="settings-sidebar__anchor active" title="Profile">Profile</a>
+                    </li>
+                    {% if phase2 %}
+                        <li class="settings-sidebar__list-item">
+                            <a href="#" class="settings-sidebar__anchor active" title="Login & Security">Login & Security</a>
+                        </li>
+                        <li class="settings-sidebar__list-item">
+                            <a href="#" class="settings-sidebar__anchor" title="Notification Settings">Notification Settings</a>
+                        </li>
+                        <li class="settings-sidebar__list-item">
+                            <a href="#" class="settings-sidebar__anchor" title="Insurance">Insurance</a>
+                        </li>
+                        <li class="settings-sidebar__list-item">
+                            <a href="#" class="settings-sidebar__anchor" title="Demographic Info">Demographic Info</a>
+                        </li>
+                        <li class="settings-sidebar__list-item">
+                            <a href="#" class="settings-sidebar__anchor" title="Privacy Settings">Privacy Settings</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </aside>
+        <section class="settings-form">
+            <form method="post" action="/users/update" class="settings-form__form js-pp-settings">
+                <h2 class="settings-form__form-title">Profile</h2>
+                <div class="settings-form__form-row">
+                    <span class="settings-form__edit js-pp-editing">Edit</span>
+                    <label  class="settings-form__label">Full Name</label>
+                    <input class="settings-form__input first-name js-dynamic-input" type="text" name="first-name" value="{{ userFirstName }}" placeholder="First Name" />
+                    <input class="settings-form__input last-name js-dynamic-input" type="text" name="last-name" value="{{ userLastName }}" placeholder="Last Name" />
+                </div>
+                <div class="settings-form__form-row">
+                    <span class="settings-form__edit js-pp-editing">Edit</span>
+                    <label  class="settings-form__label" for="email">Email Address</label>
+                    <input class="settings-form__input email-address" type="email" name="email" value="{{ userEmail }}" placeholder="Email address" />
+                </div>
+                <div class="settings-form__form-row">
+                    <span class="settings-form__edit js-pp-editing">Edit</span>
+                    <label  class="settings-form__label" for="sex">Sex</label>
+                    {% set sex_options = {
+                        'male': {
+                            'value': 'male',
+                            'text': 'Male',
+                        },
+                        'female': {
+                            'value': 'female',
+                            'text': 'Female',
+                        },
+                    } %}
+                    {% if sex_options is not empty %}
+                        <div class="settings-form__select sex">
+                            <select name="sex">
+                                {% if userSex is null %}
+                                    <option disabled hidden selected>Select an option</option>
+                                {% endif %}
+                                {% for option in sex_options %}
+                                    <option class="settings-form__option"
+                                            {{ userSex|lower==option['value'] ? 'selected' : false }}
+                                            value="{{ option['value'] }}">{{ option['text'] }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="settings-form__form-row">
+                    <span class="settings-form__edit js-pp-editing">Edit</span>
+                    <label class="settings-form__label" for="dob">Date of Birth</label>
+                    <input class="settings-form__input date-of-birth" name="dob" value="{{ userDob }}" placeholder="MM/DD/YYYY" />
+                </div>
+
+                <h2 class="settings-form__title">My case</h2>
+                <div class="settings-form__form-row">
+                    <span class="settings-form__edit js-pp-editing">Edit</span>
+                    <label class="settings-form__label" for="payment-choice">Seeking care for</label>
+                    {% set seeking_for = {
+                        'myself': {
+                            'value': 'myself',
+                            'text': 'Myself',
+                        },
+                        'loved-one': {
+                            'value': 'a_loved_one',
+                            'text': 'Loved one',
+                        },
+                    } %}
+                    {% if seeking_for is not empty %}
+                        <div class="settings-form__select">
+                            <select name="seeking-for">
+                                {% for option in seeking_for %}
+                                    <option class="settings-form__option"
+                                            {{ userSeekingCareFor|lower==option['value'] ? 'selected' : false }}
+                                            value="{{ option['value'] }}">{{ option['text'] }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="settings-form__form-row">
+                    <span class="settings-form__edit js-pp-editing">Edit</span>
+                    <label class="settings-form__label" for="urgency">Urgency</label>
+                    {% set urgency = {
+                        'now': {
+                            'value': 'right_now',
+                            'text': 'Now',
+                        },
+                        'few-days': {
+                            'value': 'a_few_days',
+                            'text': 'A few days',
+                        },
+                        'week': {
+                            'value': 'within_a_week',
+                            'text': 'Within a week',
+                        },
+                        'month': {
+                            'value': 'within_a_month',
+                            'text': 'Within a month',
+                        },
+                    } %}
+                    {% if urgency is not empty %}
+                        <div class="settings-form__select">
+                            <select name="urgency">
+                                {% for option in urgency %}
+                                    <option class="settings-form__option"
+                                            {{ userUrgency|lower==option['value'] ? 'selected' : false }}
+                                            value="{{ option['value'] }}">{{ option['text'] }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="settings-form__form-row">
+                    <span class="settings-form__edit js-pp-editing">Edit</span>
+                    <label class="settings-form__label" for="help-with">Help with</label>
+                    {% if userVertical == 0 %}
+                        {% set help_with = {
+                            'alcohol': {
+                                'value': 'alcohol',
+                                'text': 'Alcohol',
+                            },
+                            'drugs': {
+                                'value': 'drugs',
+                                'text': 'Drugs',
+                            },
+                            'dual-diagnosis': {
+                                'value': 'dual_diagnosis',
+                                'text': 'Dual diagnosis',
+                            },
+                            'other': {
+                                'value': 'other',
+                                'text': 'Other',
+                            },
+                        } %}
+                    {% elseif userVertical == '8' %}
+                        {% set help_with = {
+                            'anxiety': {
+                                'value': 'anxiety',
+                                'text': 'Anxiety',
+                            },
+                            'depression': {
+                                'value': 'depression',
+                                'text': 'Depression',
+                            },
+                            'mental-illness': {
+                                'value': 'mental_illness',
+                                'text': 'Mental Illness',
+                            },
+                            'other': {
+                                'value': 'other',
+                                'text': 'Other',
+                            },
+                        } %}
+                    {% elseif userVertical == '7' %}
+                        {% set help_with = {
+                            'anxiety': {
+                                'value': 'orthopedic',
+                                'text': 'Orthopedic',
+                            },
+                            'depression': {
+                                'value': 'sports_medicine',
+                                'text': 'Sports Medicine',
+                            },
+                            'other': {
+                                'value': 'other',
+                                'text': 'Other',
+                            },
+                        } %}
+                    {% endif %}
+                    {% if help_with is not empty %}
+                        <div class="settings-form__select">
+                            <select name="help-with">
+                                {% for option in help_with %}
+                                    <option class="settings-form__option"
+                                            {{ userHelpWith|lower==option['value'] ? 'selected' : false }}
+                                            value="{{ option['value'] }}">{{ option['text'] }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="settings-form__form-row">
+                    <span class="settings-form__edit js-pp-editing">Edit</span>
+                    <label class="settings-form__label" for="payment-choice">Payment choice</label>
+                    {% set payment_choices = {
+                        'insurance': {
+                            'value': 'insurance',
+                            'text': 'Insurance',
+                        },
+                        'medicaid': {
+                            'value': 'medicard',
+                            'text': 'Medicaid',
+                        },
+                        'medicare': {
+                            'value': 'medicare',
+                            'text': 'Medicare',
+                        },
+                        'self-pay': {
+                            'value': 'self_pay',
+                            'text': 'Self-pay',
+                        },
+                    } %}
+                    {% if payment_choices is not empty %}
+                        <div class="settings-form__select">
+                            <select name="payment-choice">
+                                {% for option in payment_choices %}
+                                    <option class="settings-form__option"
+                                            {{ userPayment|lower==option['value'] ? 'selected' : false }}
+                                            value="{{ option['value'] }}">{{ option['text'] }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="settings-form__form-row">
+                    <span class="settings-form__edit js-pp-editing">Edit</span>
+                    <label class="settings-form__label" for="location">Location</label>
+                    <input class="settings-form__input location" name="location" value="{{ userLocation }}" placeholder="Location" />
+                </div>
+
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
+
+                <button type="submit"
+                        class="btn btn--primary btn--medium settings-form__submit"
+                        disabled>Save</button>
+            </form>
+        </section>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {# Reset. #}
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+
+    {% if burger_menu %}
+        <script src="{{ asset('assets/js/bootstrap.min.js') }}" defer></script>
+        <script src="{{ asset('assets/js/jquery-ui.min.js') }}" defer></script>
+        <script src="{{ asset('assets/js/browser.jquery.js') }}" defer></script>
+        <script src="{{ asset('assets/js/burger-menu.js') }}" defer></script>
+        <script src="{{ asset('assets/js/jquery.lazy.min.js') }}" defer></script>
+        <script src="{{ asset('assets/js/base.min.js') }}" defer></script>
+    {% endif %}
+
+    {# Must come last. #}
+    <script src="{{ asset('build/patient-portal-symphony.js') }}" defer></script>
+{% endblock %}

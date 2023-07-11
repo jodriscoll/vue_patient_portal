@@ -1,0 +1,16 @@
+/* =================================================================================
+~ Patient Portal SCSS entry.
+================================================================================= */
+
+// Base - global styles, utilities, mixins, and variables.
+@import "../base/functions";
+@import "../base/variables";
+@import "../base/mixins";
+@import "../base/fonts";
+@import "../base/helpers";
+
+// Elements - elements commonly used within the DOM.
+@import "../elements/button";
+
+// Vue elements.
+@import "patient-portal/vue";

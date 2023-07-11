@@ -1,0 +1,31 @@
+.fixed-top {
+	// TODO: revisit when we clean up the global header.
+	.content {
+		@include media-breakpoint-down($pp-main-breakpoint) {
+			padding-top: 12px;
+		}
+		@include media-breakpoint-up($pp-main-breakpoint) {
+			padding-top: 15px;
+		}
+	}
+
+	.other-page-menu {
+		// TODO: revisit the burger menu integration.
+		#navMenuToggle { // needed for css specificity
+			display: none; // hide the burger menu for the MVP.
+		}
+
+		a {
+			display: block;
+		}
+
+		.logo {
+			top: 0;
+			left: 0;
+		}
+	}
+
+	.right {
+		display: none; // hide any links/advertisements in the right portion.
+	}
+}

@@ -1,0 +1,70 @@
+// Shared by the login and registration/signup pages.
+.portal-entry {
+	background-color: $white;
+	position: relative;
+
+	&__wrapper {
+		display: flex;
+
+		@include media-breakpoint-between(md, lg) {
+			padding: 80px 0 170px;
+		}
+		@include media-breakpoint-down(md) {
+			padding: 10px $grid-gutter-width 130px;
+		}
+		@include media-breakpoint-down(lg) {
+			flex-direction: column;
+			width: 100%;
+		}
+		@include media-breakpoint-up(lg) {
+			@include make-container-max-width();
+			flex-direction: row;
+			justify-content: space-between;
+			margin: 0 auto;
+		}
+		@include media-breakpoint-up(xl) {
+			padding: 80px $grid-gutter-width 170px;
+		}
+	}
+
+	// Circle shape.
+	&::before {
+		background: linear-gradient(40deg, $pp-light-blue, $pp-light-blue 70%);
+		border-radius: 100%;
+		content: '';
+		position: absolute;
+		z-index: -1;
+
+		@include media-breakpoint-down(sm) {
+			width: 100%;
+		}
+		@include media-breakpoint-down(lg) {
+			height: 80vh;
+			left: 50%;
+			top: 0;
+			transform: translate(-50%, -70%);
+		}
+		@include media-breakpoint-between(sm, lg) {
+			width: 80vw;
+		}
+		@include media-breakpoint-up(lg) {
+			height: 90vh;
+			left: 0;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: 80vw;
+		}
+	}
+
+	// Browser DOM Elements.
+	@import "/dom-elements/header";
+	@import "/dom-elements/main";
+	@import "/dom-elements/footer";
+
+	// Custom DOM elements.
+	@import "/custom-elements/care-team";
+	@import "/custom-elements/form-section";
+
+	// Template variant(s).
+	@import "login";
+}

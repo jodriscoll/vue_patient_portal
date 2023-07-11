@@ -1,0 +1,37 @@
+.patient-portal {
+	background-color: $pp-body-background;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	--mobile-gradient-height: 353px; // default target.
+
+	&::before {
+		@include media-breakpoint-down(sm) {
+			background: rgb(238,255,253);
+			background: linear-gradient(
+				90deg, rgba(238,255,253,1)
+				0%, rgba(200,231,255,1)
+				100%
+			);
+			content: "";
+			height: var(--mobile-gradient-height);
+			position: absolute;
+			top: 0;
+			width: 100%;
+			z-index: -1;
+		}
+	}
+
+	&__copyright {
+		box-sizing: border-box;
+		color: $pp-placeholder;
+		display: block;
+		font-family: $pp-font-primary;
+		font-size: 10px;
+		font-weight: $font-weight-light;
+		padding: 50px 15px;
+		text-align: center;
+		text-shadow: 1px 1px 1px $pp-white;
+		width: 100vw;
+	}
+}

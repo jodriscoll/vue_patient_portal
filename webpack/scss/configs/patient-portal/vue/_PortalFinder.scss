@@ -1,0 +1,111 @@
+.portal-finder {
+	@include media-breakpoint-up($pp-main-breakpoint) {
+		margin-bottom: 30px;
+	}
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		padding: 50px;
+
+		@include media-breakpoint-down($pp-main-breakpoint) {
+			padding: 56px $pp-mobile-gutter 40px;
+		}
+		@include media-breakpoint-up($pp-main-breakpoint) {
+			background-color: $pp-finder-bg;
+			padding: 95px 50px 50px;
+		}
+	}
+
+	&__title {
+		font-weight: $font-weight-medium;
+		margin-bottom: 27px;
+		margin-top: 0; // reset
+
+		@include media-breakpoint-down($pp-main-breakpoint) {
+			font-size: 36px;
+		}
+		@include media-breakpoint-up($pp-main-breakpoint) {
+			font-size: 48px;
+		}
+	}
+
+	&__paragraph {
+		font-weight: $font-weight-light;
+		margin: 0;
+
+		@include media-breakpoint-down($pp-main-breakpoint) {
+			font-size: 15px;
+		}
+		@include media-breakpoint-up($pp-main-breakpoint) {
+			font-size: 18px;
+		}
+	}
+
+	&__form {
+		@include media-breakpoint-down($pp-main-breakpoint) {
+			display: none;
+		}
+		@include media-breakpoint-up($pp-main-breakpoint) {
+			display: flex;
+			flex-direction: row;
+			margin-top: (36px - 4px); // design - webfont line-spacing
+			width: 100%;
+		}
+
+		.form-select__field {
+			background-color: $pp-white;
+			border: none;
+			box-sizing: border-box;
+			box-shadow: none;
+			color: $pp-black;
+			display: block;
+			font-family: $pp-font-primary;
+			font-size: 14px;
+			margin: 0;
+			max-width: 100%;
+			outline: none;
+			width: 100%;
+		}
+
+		.form-input__field,
+		.form-select__wrapper {
+			box-shadow: $pp-box-shadow-lighter;
+		}
+	}
+
+	&__column {
+		margin-right: 4px;
+		width: 100%;
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+
+		// Second to last column.
+		&.insurance {
+			margin-right: 0;
+		}
+
+		// Last column.
+		&.submit {
+			width: auto;
+		}
+	}
+
+	&__button {
+		height: 100%;
+		padding: 12px 20px;
+		width: 50px;
+
+		&:hover,
+		&:focus {
+			text-decoration: none;
+		}
+	}
+
+	&__button-icon {
+		height: 24px;
+		width: 24px;
+	}
+}

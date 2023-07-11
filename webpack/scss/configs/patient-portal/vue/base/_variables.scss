@@ -1,0 +1,32 @@
+// Typefaces.
+$pp-font-primary: 'Readex Pro', sans-serif;
+
+// Colors.
+$pp-body-background: #f6f6f6;
+$pp-finder-bg:       #cfe9ff;
+$pp-black:           #232323;
+$pp-white:           #ffffff;
+$pp-grey-light:      #f1f1f1;
+$pp-grey-dark:       #c9c9c9;
+$pp-placeholder:     #bebebe;
+$pp-verified-green:  #84de51;
+$pp-primary-blue:    #0462e7;
+$pp-primary-yellow:  #ffeb6e;
+$pp-light-blue:      #c8e7ff;
+$pp-error-txt-red:   #721c24;
+$pp-disabled-bg:     #e9e9e9;
+$pp-disabled-text:   #aeaeae;
+
+// Structure.
+$pp-body-max-width:      1270px;
+$pp-button-group-spacer: 10px;
+$pp-main-breakpoint:     'md';
+$pp-main-padding-sm:     25px;
+$pp-main-padding-lg:     15px;
+$pp-grid-gap-sm:         35px;
+$pp-mobile-gutter:       17px;
+
+// Styles patterns.
+$pp-box-shadow-lighter: 0 0 5px rgba(#000, .05);
+$pp-box-shadow-normal:  0 0 6px rgba(#000, .15);
+$pp-animation-generic: .25s ease-in-out;

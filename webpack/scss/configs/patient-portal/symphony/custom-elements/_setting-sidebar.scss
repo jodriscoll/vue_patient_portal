@@ -1,0 +1,53 @@
+.settings-sidebar {
+	width: 100%;
+
+	@include media-breakpoint-down($pp-main-breakpoint) {
+		padding-bottom: 25px;
+	}
+	@include media-breakpoint-up($pp-main-breakpoint) {
+		padding-right: 50px;
+		max-width: 275px;
+	}
+
+	&__navigation {
+		position: sticky;
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	&__list-item {
+		border-bottom: 1px solid $pp-disabled-bg;
+		padding: 18px 0;
+		position: relative;
+	}
+
+	&__anchor {
+		color: $black;
+		display: block;
+		font-size: 16px;
+		font-weight: $font-weight-medium;
+		padding-right: 30px;
+		text-decoration: none;
+		width: 100%;
+
+		// Right chevron.
+		&::after {
+			content: "\203A";
+			font-size: 26px;
+			height: 15px;
+			line-height: 10px;
+			position: absolute;
+			right: 5px;
+			text-align: center;
+			top: 50%;
+			transform: translateY(-50%) rotate(0deg);
+			width: 15px;
+		}
+	}
+}

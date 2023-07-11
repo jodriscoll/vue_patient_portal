@@ -1,0 +1,13 @@
+.insurance-verify {
+	display: flex;
+	flex-direction: column;
+	grid-area: sidebar;
+
+	&__row {
+		margin-bottom: 15px;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+}

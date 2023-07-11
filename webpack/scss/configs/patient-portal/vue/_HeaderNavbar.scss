@@ -1,0 +1,167 @@
+$navbar-item-spacer: 20px;
+$navbar-item-padding-desktop: 20px;
+$navbar-item-padding-mobile: 13px;
+
+.navbar {
+	display: flex;
+	flex-direction: row;
+
+	&__list {
+		display: flex;
+		flex-direction: row;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	&__list-item {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		margin: auto;
+
+		@include media-breakpoint-down($pp-main-breakpoint) {
+			display: none;
+		}
+
+		&:first-of-type {
+			border-right: 2px solid $pp-black;
+			margin-right: $navbar-item-spacer;
+			padding-right: $navbar-item-spacer;
+		}
+	}
+
+	&__link {
+		color: $pp-black;
+		font-size: 14px;
+		line-height: 1;
+		text-decoration: none;
+
+		@include dynamicUnderlines(-18px);
+	}
+
+	// dropdowns in the navbar.
+	.dropdown {
+		@include media-breakpoint-up($pp-main-breakpoint) {
+			margin-left: $navbar-item-spacer;
+		}
+
+		&__toggle {
+			@include media-breakpoint-up($pp-main-breakpoint) {
+				min-width: 240px;
+			}
+		}
+	}
+}
+
+.dropdown {
+	display: flex;
+	position: relative;
+
+	&__toggle,
+	&__link,
+	&__logout {
+		@include media-breakpoint-down($pp-main-breakpoint) {
+			padding: $navbar-item-padding-mobile;
+		}
+		@include media-breakpoint-up($pp-main-breakpoint) {
+			padding: $navbar-item-padding-desktop;
+		}
+	}
+
+	&__toggle {
+		background-color: $pp-white;
+		box-shadow: $pp-box-shadow-normal;
+		color: $pp-black;
+		font-size: 14px;
+		font-weight: $font-weight-medium;
+		text-decoration: none;
+		transition: background-color $pp-animation-generic,
+					transform $pp-animation-generic;
+		z-index: 1;
+
+		@include media-breakpoint-down($pp-main-breakpoint) {
+			min-width: 75px;
+			padding-right: 35px;
+		}
+		@include media-breakpoint-up($pp-main-breakpoint) {
+			padding-right: 35px;
+		}
+
+		// down arrow.
+		&::after {
+			content: "\203A";
+			font-size: 26px;
+			height: 15px;
+			line-height: 10px;
+			position: absolute;
+			right: 15px;
+			text-align: center;
+			top: 50%;
+			transform: translateY(-50%) rotate(90deg);
+			width: 15px;
+		}
+
+		// When opened/expanded.
+		&[aria-expanded=true] {
+			background-color: $pp-light-blue;
+
+			&::after {
+				transform: translateY(-50%) rotate(-90deg);
+			}
+		}
+	}
+
+	&__menu {
+		background-color: $pp-white;
+		box-shadow: $pp-box-shadow-normal;
+		clip-path: inset(0 -10px -10px -10px);
+		overflow: hidden;
+		position: absolute;
+		right: 0;
+		top: 100%;
+		width: 100%;
+		z-index: 2;
+
+		@include media-breakpoint-down($pp-main-breakpoint) {
+			border-radius: 0 0 5px 5px;
+		}
+		@include media-breakpoint-up($pp-main-breakpoint) {
+			border-radius: 0 0 10px 10px;
+		}
+	}
+
+	&__link,
+	&__logout {
+		display: inline-block;
+		font-size: 14px;
+		text-decoration: none;
+		width: 100%;
+	}
+
+	&__link {
+		box-sizing: border-box;
+		color: $pp-black;
+
+		//@include dynamicUnderlines(0);
+
+		&:first-of-type {
+			padding-bottom: ($navbar-item-padding-desktop / 2);
+		}
+
+		&:last-of-type {
+			padding-top: ($navbar-item-padding-desktop / 2);
+		}
+	}
+
+	&__logout {
+		color: $pp-error-txt-red;
+	}
+
+	&__divider {
+		background-color: $pp-grey-dark;
+		height: 1px;
+		padding: 0;
+		width: 100%;
+	}
+}

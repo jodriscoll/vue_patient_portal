@@ -1,0 +1,36 @@
+@mixin listCheckmark($bg-color, $icon-color, $icon-size, $top-offset: false, $bg-scale: false, $icon-centered: false) {
+	position: relative;
+
+	&::before {
+		background-color: $bg-color;
+		background-position: center;
+		background-repeat: no-repeat;
+
+		@if $bg-scale {
+			background-size: $bg-scale;
+		}
+
+		border-radius: 50%;
+		color: $icon-color;
+		content: '';
+		height: $icon-size;
+		position: absolute;
+
+		@if $top-offset {
+			top: $top-offset;
+		} @else {
+			top: 0;
+		}
+
+		@if $icon-centered {
+			left: 50%;
+			transform: translateX(-50%);
+		} @else {
+			left: 0
+		}
+
+		width: $icon-size;
+
+		@content
+	}
+}

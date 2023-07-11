@@ -1,0 +1,164 @@
+$form-inputs-spacer-desktop: 10px;
+$form-placeholder-text-color: #777;
+
+.form-section {
+	width: 100%;
+
+	@include media-breakpoint-down(md) {
+		margin-top: 20px;
+	}
+	@include media-breakpoint-between(lg, xl) {
+		max-width: 405px;
+	}
+	@include media-breakpoint-up(xl) {
+		max-width: 475px;
+	}
+
+	&.login-form {
+		@include media-breakpoint-between(lg, xl) {
+			margin-top: 65px;
+		}
+		@include media-breakpoint-up(xl) {
+			margin-top: 75px;
+		}
+	}
+
+	&.registration-form {
+		@include media-breakpoint-only(lg) {
+			margin-top: 10px;
+		}
+	}
+
+	// All links.
+	a {
+		color: $pp-form-links;
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+
+		@at-root .registration-form, .login-form {
+			.alert-danger {
+				display: none;
+			}
+		}
+	}
+
+	&__input,
+	&__dropdown {
+		background-color: #f5f6f7;
+		border: 1px solid #d9dcdf;
+		border-radius: 5px;
+		color: $pp-black;
+		margin-bottom: $form-inputs-spacer-desktop;
+		padding: 10px;
+
+		@include media-breakpoint-down($pp-main-breakpoint) {
+			font-size: 16px;
+		}
+		@include media-breakpoint-up($pp-main-breakpoint) {
+			font-size: 16px;
+		}
+
+		&::placeholder {
+			color: $form-placeholder-text-color;
+		}
+
+		&.error {
+			background-color: $pp-error-bg-red;
+			border-color: $pp-error-bdr-red;
+			color: $pp-error-txt-red;
+
+			select {
+				color: $pp-error-txt-red;
+			}
+
+			&::placeholder {
+				color: $pp-error-txt-red;
+			}
+		}
+	}
+
+	&__inputs {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+
+		// Inputs grouped within.
+		input {
+			margin-right: ($form-inputs-spacer-desktop / 2);
+			width: 50%;
+
+			// Starting from the second input detected, add a spacer to the left.
+			&:nth-of-type(n+2) {
+				margin-right: 0;
+
+				@include media-breakpoint-up($pp-main-breakpoint) {
+					margin-left: ($form-inputs-spacer-desktop / 2);
+				}
+			}
+		}
+	}
+
+	&__select {
+		background-color: transparent;
+		border: none;
+		color: $pp-black;
+		padding: 0;
+		width: 100%;
+
+		option {
+			&[disabled] {
+				color: $form-placeholder-text-color;
+			}
+		}
+	}
+
+	&__text {
+		color: $pp-black;
+		font-family: $font-family-roboto;
+		font-weight: $font-weight-light;
+
+		@include media-breakpoint-down($pp-main-breakpoint) {
+			font-size: 16px;
+		}
+		@include media-breakpoint-up($pp-main-breakpoint) {
+			font-size: 17px;
+		}
+
+		h1 {
+			line-height: 1;
+			margin-top: 0;
+		}
+
+		h2 {
+			font-family: $font-family-lato;
+			font-weight: $font-weight-normal;
+
+			@include media-breakpoint-down($pp-main-breakpoint) {
+				font-size: 32px;
+			}
+			@include media-breakpoint-up($pp-main-breakpoint) {
+				font-size: 45px;
+			}
+		}
+
+		&.text-center {
+			text-align: center;
+		}
+	}
+
+	&__submit {
+		margin-bottom: 15px;
+	}
+
+	&__disclaimer {
+		color: $pp-disclaimer-grey;
+		font-family: $font-family-roboto;
+		font-size: 13px;
+		font-weight: $font-weight-light;
+		margin-bottom: 20px;
+		margin-top: 5px;
+	}
+}

@@ -1,0 +1,66 @@
+$pp-form-input: "form-input";
+$pp-form-icon-padding: 50px;
+
+.#{$pp-form-input} {
+	display: flex;
+	position: relative;
+
+	&__wrapper {
+		position: relative;
+		width: 100%;
+	}
+
+	&__icon {
+		display: block;
+		height: 18px;
+		left: ($pp-form-icon-padding / 2.5);
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 18px;
+	}
+
+	&__field {
+		border: 1px solid $pp-grey-light;
+		box-shadow: $pp-box-shadow-normal;
+		box-sizing: border-box;
+		font-family: $pp-font-primary;
+		font-size: 14px;
+		letter-spacing: 0.5px;
+		line-height: 1;
+		padding: 15px 20px;
+		width: 100%;
+
+		&::placeholder {
+			color: $pp-placeholder;
+		}
+	}
+
+	&__label {
+		color: $pp-black;
+	}
+
+	&__hint {
+		background-color: $pp-grey-light;
+		border: 1px solid $pp-grey-dark;
+		border-radius: 0 0 8px 8px;
+		position: absolute;
+		height: 30px;
+		width: 100%;
+
+		span {
+			color: $pp-black;
+			font-size: 16px;
+			font-weight: $font-weight-light;
+			padding: 5px;
+		}
+	}
+
+	// If an icon is present on the input.
+	&.has-icon {
+		.#{$pp-form-input}__field {
+			padding-left: $pp-form-icon-padding;
+		}
+	}
+}
+

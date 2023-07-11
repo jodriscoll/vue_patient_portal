@@ -1,0 +1,23 @@
+@import "../../vue/base/variables";
+
+.header {
+	background-color: transparent;
+
+	&__wrapper {
+		align-items: center;
+		background-color: transparent;
+		box-sizing: border-box;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		margin: 0 auto;
+		width: 100%;
+
+		@include media-breakpoint-down($pp-main-breakpoint) {
+			padding: 0 $pp-mobile-gutter $pp-main-padding-sm;
+		}
+		@include media-breakpoint-up($pp-main-breakpoint) {
+			padding: 0 0 $pp-main-padding-lg;
+		}
+	}
+}

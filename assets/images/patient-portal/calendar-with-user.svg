@@ -1,0 +1,241 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" width="134" height="121">
+    <style>
+        tspan{white-space:pre}.s0{fill:#deeeff}.s2{fill:#ffec6e}.s3{fill:#dbdbdb}.t4,.t5,.t8{font-size:2px;line-height:3px;fill:#ff596a;font-weight:400;font-family:&quot;Montserrat-Regular&quot;,&quot;Montserrat&quot;}.t5,.t8{fill:#bababa}.t8{fill:#f23b66}.t9{font-size:3px;line-height:4px;fill:#5295bd;font-weight:600;font-family:&quot;Montserrat-SemiBold&quot;,&quot;Montserrat&quot;}.s11{fill:#00d2c5}.s12{fill:#ffbeac}.s13{fill:#323759}.s14{fill:#3e466d}.s15{fill:#5295bd}.s16{fill:#f2f2f2}
+    </style>
+    <g id="Group 92">
+        <g id="Group 55">
+            <path id="Ellipse 22" class="s0" d="M27.8 120c-7.4 0-13.4-1.3-13.4-2.9 0-1.6 6-2.9 13.4-2.9s13.4 1.3 13.4 2.9c0 1.6-6 2.9-13.4 2.9z"/>
+            <path id="Ellipse 23" class="s0" d="M99.1 120c-9 0-16.4-1.3-16.4-2.9 0-1.6 7.4-2.9 16.4-2.9 9 0 16.3 1.3 16.3 2.9 0 1.6-7.3 2.9-16.3 2.9z"/>
+            <path id="Ellipse 24" class="s0" d="M98.1 116c-12.8 0-23.1-.8-23.1-1.8 0-.9 10.3-1.7 23.1-1.7 12.7 0 23 .8 23 1.7 0 1-10.3 1.8-23 1.8z"/>
+        </g>
+        <g id="Group 56">
+            <path id="Path 53" class="s0" d="M59.7 20.6c6.2-13.2 31.8-29.8 58-14.4 26.3 15.4 15.4 47.3 4.6 54.6-10.9 7.2-18.4 13.6-4.6 24.4 13.9 10.8 5.9 24.6 1.8 24.6-4.1 0-42.3.4-73.2.4-30.9 0-42.5 1.2-42.1-11.9.4-13 7.3-18.6 4-28.5C5 59.9-4 48.6 3.3 35.6c7.4-12.9 30.8-8.1 30.8-8.1s19.4 6.3 25.6-6.9z"/>
+        </g>
+        <g id="Group 91">
+            <g id="Group 85">
+                <g id="Group 59">
+                    <path id="Path 54" fill-rule="evenodd" d="M116.5 21.3v82c0 2.9-2.3 5.2-5.2 5.2H20.7c-2.8 0-5.1-2.3-5.1-5.2v-82c0-2.9 2.3-5.2 5.1-5.2h90.6c2.9 0 5.2 2.3 5.2 5.2zm-72.2.7c0-1.5-1.2-2.8-2.8-2.8-1.6 0-2.8 1.3-2.8 2.8 0 1.6 1.2 2.9 2.8 2.9 1.6 0 2.8-1.3 2.8-2.9zm49.1 0c0-1.5-1.3-2.8-2.9-2.8-1.5 0-2.8 1.3-2.8 2.8 0 1.6 1.3 2.9 2.8 2.9 1.6 0 2.9-1.3 2.9-2.9z" style="fill:#fffaff"/>
+                    <path id="Rectangle 73" class="s2" d="M46.9 54.3h12.5v9.2H46.9z"/>
+                    <g id="Group 58">
+                        <g id="Group 57">
+                            <path id="Path 55" fill-rule="evenodd" class="s2" d="M116.5 21.3V29H15.6v-7.7c0-2.9 2.3-5.2 5.1-5.2h90.6c2.9 0 5.2 2.3 5.2 5.2zm-72.2.7c0-1.5-1.2-2.8-2.8-2.8-1.6 0-2.8 1.3-2.8 2.8 0 1.6 1.2 2.9 2.8 2.9 1.6 0 2.8-1.3 2.8-2.9zm49.1 0c0-1.5-1.3-2.8-2.9-2.8-1.5 0-2.8 1.3-2.8 2.8 0 1.6 1.3 2.9 2.8 2.9 1.6 0 2.9-1.3 2.9-2.9z"/>
+                        </g>
+                    </g>
+                </g>
+                <g id="Group 82">
+                    <g id="Group 74">
+                        <g id="Group 73">
+                            <g id="Group 60">
+                                <path id="Path 56" fill-rule="evenodd" class="s3" d="M111.1 102.2H21V41.3h90.1zm-89.7-.4h89.3V41.7H21.4z"/>
+                            </g>
+                            <g id="Group 61">
+                                <path id="Rectangle 74" class="s3" d="M21.2 53.9h89.7v.4H21.2z"/>
+                            </g>
+                            <g id="Group 62">
+                                <path id="Rectangle 75" class="s3" d="M21.2 63.5h89.7v.4H21.2z"/>
+                            </g>
+                            <g id="Group 63">
+                                <path id="Rectangle 76" class="s3" d="M21.2 73.1h89.7v.3H21.2z"/>
+                            </g>
+                            <g id="Group 64">
+                                <path id="Rectangle 77" class="s3" d="M21.2 82.6h89.7v.4H21.2z"/>
+                            </g>
+                            <g id="Group 65">
+                                <path id="Rectangle 78" class="s3" d="M21.2 92.2h89.7v.4H21.2z"/>
+                            </g>
+                            <g id="Group 72">
+                                <g id="Group 66">
+                                    <path id="Rectangle 79" class="s3" d="M33.8 41.5h.3V102h-.3z"/>
+                                </g>
+                                <g id="Group 67">
+                                    <path id="Rectangle 80" class="s3" d="M46.6 41.5h.3V102h-.3z"/>
+                                </g>
+                                <g id="Group 68">
+                                    <path id="Rectangle 81" class="s3" d="M59.4 41.5h.3V102h-.3z"/>
+                                </g>
+                                <g id="Group 69">
+                                    <path id="Rectangle 82" class="s3" d="M72.1 41.5h.4V102h-.4z"/>
+                                </g>
+                                <g id="Group 70">
+                                    <path id="Rectangle 83" class="s3" d="M84.9 41.5h.4V102h-.4z"/>
+                                </g>
+                                <g id="Group 71">
+                                    <path id="Rectangle 84" class="s3" d="M97.7 41.5h.4V102h-.4z"/>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                    <g id="Group 81">
+                        <g id="Group 75">
+                            <text id="31" style="transform:matrix(1,0,0,1,26.951,58.56)">
+								<tspan x="-.9" y="0" class="t4">31</tspan>
+							</text>
+                            <text id="1" style="transform:matrix(1,0,0,1,39.642,58.56)">
+								<tspan x="-1" y="0" class="t5">01</tspan>
+							</text>
+                            <text id="2" style="transform:matrix(1,0,0,1,52.089,58.56)">
+								<tspan x="-1.2" y="0" style="font-size:2px;line-height:3px;fill:#222;font-weight:400;font-family:&quot;Montserrat-Regular&quot;,&quot;Montserrat&quot;">02</tspan>
+							</text>
+                            <text id="3" style="transform:matrix(1,0,0,1,64.841,58.56)">
+								<tspan x="-1.2" y="0" class="t5">03</tspan>
+							</text>
+                            <text id="4" style="transform:matrix(1,0,0,1,77.289,58.56)">
+								<tspan x="-1.3" y="0" class="t5">04</tspan>
+							</text>
+                            <text id="5" style="transform:matrix(1,0,0,1,90.345,58.56)">
+								<tspan x="-1.2" y="0" class="t5">05</tspan>
+							</text>
+                            <text id="6" style="transform:matrix(1,0,0,1,102.793,58.56)">
+								<tspan x="-1.3" y="0" class="t5">06</tspan>
+							</text>
+                        </g>
+                        <g id="Group 76">
+                            <text id="7" style="transform:matrix(1,0,0,1,26.342,68.17)">
+								<tspan x="-1.2" y="0" class="t4">07</tspan>
+							</text>
+                            <text id="8" style="transform:matrix(1,0,0,1,39.032,68.17)">
+								<tspan x="-1.3" y="0" class="t5">08</tspan>
+							</text>
+                            <text id="9" style="transform:matrix(1,0,0,1,51.784,68.17)">
+								<tspan x="-1.3" y="0" class="t5">09</tspan>
+							</text>
+                            <text id="10" style="transform:matrix(1,0,0,1,65.146,68.17)">
+								<tspan x="-1" y="0" class="t5">10</tspan>
+							</text>
+                            <text id="11" style="transform:matrix(1,0,0,1,77.507,67.17)">
+								<tspan x="-.4" y="0" style="font-size:1px;line-height:1px;fill:#bababa;font-weight:400;font-family:&quot;Montserrat-Regular&quot;,&quot;Montserrat&quot;">11</tspan>
+							</text>
+                            <text id="12" style="transform:matrix(1,0,0,1,90.65,68.17)">
+								<tspan x="-.9" y="0" class="t5">12</tspan>
+							</text>
+                            <text id="13" style="transform:matrix(1,0,0,1,103.402,68.17)">
+								<tspan x="-.9" y="0" class="t5">13</tspan>
+							</text>
+                        </g>
+                        <g id="Group 77">
+                            <text id="14" style="transform:matrix(1,0,0,1,26.951,77.657)">
+								<tspan x="-1" y="0" class="t4">14</tspan>
+							</text>
+                            <text id="15" style="transform:matrix(1,0,0,1,39.642,77.657)">
+								<tspan x="-.9" y="0" class="t5">15</tspan>
+							</text>
+                            <text id="16" style="transform:matrix(1,0,0,1,52.394,77.657)">
+								<tspan x="-1" y="0" class="t5">16</tspan>
+							</text>
+                            <text id="17" style="transform:matrix(1,0,0,1,65.146,77.657)">
+								<tspan x="-.9" y="0" class="t5">17</tspan>
+							</text>
+                            <text id="18" style="transform:matrix(1,0,0,1,77.898,77.657)">
+								<tspan x="-1" y="0" class="t5">18</tspan>
+							</text>
+                            <text id="19" style="transform:matrix(1,0,0,1,90.65,77.657)">
+								<tspan x="-1" y="0" class="t5">19</tspan>
+							</text>
+                            <text id="20" style="transform:matrix(1,0,0,1,103.097,77.657)">
+								<tspan x="-1.2" y="0" class="t5">20</tspan>
+							</text>
+                        </g>
+                        <g id="Group 78">
+                            <text id="21" style="transform:matrix(1,0,0,1,26.951,87.268)">
+								<tspan x="-.9" y="0" class="t4">21</tspan>
+							</text>
+                            <text id="22" style="transform:matrix(1,0,0,1,39.337,87.268)">
+								<tspan x="-1.1" y="0" class="t5">22</tspan>
+							</text>
+                            <text id="23" style="transform:matrix(1,0,0,1,52.089,87.268)">
+								<tspan x="-1.1" y="0" class="t5">23</tspan>
+							</text>
+                            <text id="24" style="transform:matrix(1,0,0,1,64.841,87.268)">
+								<tspan x="-1.2" y="0" class="t5">24</tspan>
+							</text>
+                            <text id="25" style="transform:matrix(1,0,0,1,77.593,87.268)">
+								<tspan x="-1.1" y="0" class="t5">25</tspan>
+							</text>
+                            <text id="26" style="transform:matrix(1,0,0,1,90.345,87.268)">
+								<tspan x="-1.2" y="0" class="t5">26</tspan>
+							</text>
+                            <text id="27" style="transform:matrix(1,0,0,1,103.097,87.268)">
+								<tspan x="-1.2" y="0" class="t5">27</tspan>
+							</text>
+                        </g>
+                        <g id="Group 79">
+                            <text id="28" style="transform:matrix(1,0,0,1,26.646,96.678)">
+								<tspan x="-1.2" y="0" class="t4">28</tspan>
+							</text>
+                            <text id="29" style="transform:matrix(1,0,0,1,39.337,96.678)">
+								<tspan x="-1.2" y="0" class="t5">29</tspan>
+							</text>
+                            <text id="30" style="transform:matrix(1,0,0,1,52.089,96.678)">
+								<tspan x="-1.2" y="0" class="t5">30</tspan>
+							</text>
+                            <text id="31" style="transform:matrix(1,0,0,1,65.146,96.678)">
+								<tspan x="-.9" y="0" class="t5">31</tspan>
+							</text>
+                            <text id="1" style="transform:matrix(1,0,0,1,77.898,96.678)">
+								<tspan x="-1" y="0" class="t8">01</tspan>
+							</text>
+                            <text id="2" style="transform:matrix(1,0,0,1,90.345,96.678)">
+								<tspan x="-1.2" y="0" class="t8">02</tspan>
+							</text>
+                            <text id="3" style="transform:matrix(1,0,0,1,103.097,96.678)">
+								<tspan x="-1.2" y="0" class="t8">03</tspan>
+							</text>
+                        </g>
+                        <g id="Group 80">
+                            <text id="Su" style="transform:matrix(1,0,0,1,27.037,48.659)">
+								<tspan x="-2" y="0" class="t9">Su</tspan>
+							</text>
+                            <text id="Mo" style="transform:matrix(1,0,0,1,39.118,48.659)">
+								<tspan x="-2.4" y="0" class="t9">Mo</tspan>
+							</text>
+                            <text id="Tu" style="transform:matrix(1,0,0,1,52.784,48.659)">
+								<tspan x="-1.9" y="0" class="t9">Tu</tspan>
+							</text>
+                            <text id="We" style="transform:matrix(1,0,0,1,65.623,48.659)">
+								<tspan x="-2.6" y="0" class="t9">We</tspan>
+							</text>
+                            <text id="Th" style="transform:matrix(1,0,0,1,77.984,48.659)">
+								<tspan x="-1.9" y="0" class="t9">Th</tspan>
+							</text>
+                            <text id="Fr" style="transform:matrix(1,0,0,1,90.345,47.659)">
+								<tspan x="-1" y="0" style="font-size:2px;line-height:3px;fill:#5295bd;font-weight:600;font-family:&quot;Montserrat-SemiBold&quot;,&quot;Montserrat&quot;">Fr</tspan>
+							</text>
+                            <text id="Sa" style="transform:matrix(1,0,0,1,103.793,48.659)">
+								<tspan x="-1.9" y="0" class="t9">Sa</tspan>
+							</text>
+                        </g>
+                    </g>
+                </g>
+                <g id="Group 84">
+                    <g id="Group 83">
+                        <path id="Rectangle 85" class="s11" d="M39.6 11.7c0-1.1.9-2 2-2 1 0 1.9.9 1.9 2v10.6c0 1.1-.9 1.9-1.9 1.9-1.1 0-2-.8-2-1.9z"/>
+                        <path id="Rectangle 86" class="s11" d="M88.7 11.7c0-1.1.8-2 1.9-2 1.1 0 1.9.9 1.9 2v10.6c0 1.1-.8 1.9-1.9 1.9-1.1 0-1.9-.8-1.9-1.9z"/>
+                    </g>
+                </g>
+            </g>
+            <g id="Group 90">
+                <g id="Group 87">
+                    <path id="Path 57" class="s12" d="M28.9 63.9s.1 2.1.1 2.4c-.5.7-1.4 1.1-1.4 1.1s-1.4-.7-2.1-1.9c.1-1.1.2-3.1 0-3.5 1.1.9 3.4 1.9 3.4 1.9z"/>
+                    <g id="Group 86">
+                        <path id="Path 58" class="s12" d="M29.1 58.7s1.8 2.7 1.5 5.2c-.3.6-3 1.5-4.4-.3-.8.4-1.1-1-1.2-1.4 0-.4.7-.3.9 0-.4-1.5-.8-2.7-.3-3 .5-.3 3.2-1 3.5-.5z"/>
+                        <path id="Path 59" class="s13" d="M29.2 58.1c-.2.4-.6.7-1 .9 0 0 .1.7-.1 1.3-.1.7-.1 1.1.1 1.5l-.3.1s-.3-.8-.7-.8c-.4 0-.3.9 0 1.6.2.7 0 1.1-.3 1.3-.2.2-1.1.9-2 .3-.6-.4-2-2.8-2.1-3.7-.5-1.1.1-1.9.7-2.1-.3-1.4 2.3-1 3-1.4.6-.3.9-.7 1.1-.7.2 0 .2.5-.1.8.1-.1 1-.6 1.3-.9.4-.3 1.1.5.4 1.8z"/>
+                    </g>
+                </g>
+                <g id="Group 89">
+                    <g id="Group 88">
+                        <path id="Path 60" class="s13" d="M26.5 110.8c-.7.9-.3 4.4-.2 5.4.1 1.1.2 2-1 1.1-1.1-.8-1.5-3.8-1.4-4.3.1-.5-.1-.9-.4-1-.3-.1-.8-2.3-.4-2.5.5-.2 1.7-.8 1.7-.8s2.5 1.1 1.7 2.1z"/>
+                        <path id="Path 61" class="s13" d="M29.7 115c.7.9 1.4.3 2 0 1.3-.4 1.5.9.8 1.6-1.2.9-2.4.5-2.4.5v.5s0 .3-.4.4c-.5.1-2.3.2-2.5-.3-.2-.4.2-2.5.2-2.5s1.9-.5 2.3-.2z"/>
+                        <path id="Path 62" class="s14" d="M34.1 85.4s1 12.1.9 13.9c-.2 1.8-4.6 8.8-8.6 12.3-1-1.3-1.9-2.8-1.9-2.8s4.8-7.4 5.8-8.5c.9-1.1-2-10.3-2.7-12.9-.8-2.6 6.5-2 6.5-2z"/>
+                        <path id="Path 63" class="s14" d="m29.3 86.1.4 3.1s-.7 9.4-.6 11.6c0 2.2 1.3 14.5 1.3 14.5s-2.2.6-3.5 0c0-.7-1.9-12.9-2.4-16.8C24 94.6 23.1 87 23.1 87z"/>
+                        <path id="Path 64" class="s15" d="m23.1 73.7-1.5 4.1 3.2 6.5-2.1 2.4s-4.5-7.6-4.3-9.2c.2-1.5 2.6-9.6 2.6-9.6z"/>
+                        <path id="Path 65" class="s16" d="M25 65.7s.1-.8.2-.9c.1-.1 1.3-.8 3.8-.1.4.1.5 1 .5 1z"/>
+                        <path id="Path 66" class="s15" d="M21 67.9s3.2-1.8 4-2.4c.7-.5 3.5-.5 4.2-.3.9.3 5 .7 5.1.7.6 2.2.4 4.7 0 5.8-.4 1.1-1.2 7-1 8.3.3 1.3 1.8 5.2 2 5.5-2.1 2.8-8.6 3.1-13 2.4.2-4.4 1-6.3 1.1-8.7.1-2.4-.6-3.8-1.1-4.7-1.6-3.1-1.3-6.6-1.3-6.6z"/>
+                    </g>
+                    <path id="Path 67" class="s12" d="M46.3 61.7s1.1-.6 1.2-1c0-.4.4-1.3.6-1.5.1-.3.6-.7.9-1 .1 0 .4.4-.1.8-.3.3-.2.5-.2.5.1 0 1.5-1.6 2.3-2 .1-.1.5.1.1.5-.4.5-1.1 1.1-1.1 1.1.4.1.5.4.4.5.4.1.4.4.3.5.3.1.3.5.2.7-.1.2-.4.8-1.8 1.1-.7 0-1.6.9-1.6.9z"/>
+                    <path id="Path 68" class="s16" d="m46.9 61 .5-.4 1.3 1.6-.7.4z"/>
+                    <path id="Path 69" class="s15" d="M34.3 65.9s6-.5 6.9-.8c.8-.4 5.8-4.3 5.8-4.3s1.2 1.5 1.3 1.7c-2.3 3-5.2 5.2-6.1 5.6-.9.4-8.2 3-8.9 3.1.5-1.4 1-3.1 1-5.3z"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

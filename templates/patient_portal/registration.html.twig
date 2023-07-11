@@ -1,0 +1,190 @@
+{% extends 'base.html.twig' %}
+
+{# Define the body class. #}
+{% set bodyclass = 'portal-entry' %}
+
+{# Control what shouldn't show based on MVP. #}
+{% set phase2 = false %}
+
+{# Control the support for the burger menu. #}
+{% set burger_menu = false %}
+
+{% block title %}Patient Portal Registration | Rehab.com{% endblock %}
+{% block meta_title %}Patient Portal Registration | Rehab.com{% endblock %}
+{% block meta_description %}Welcome to the Rehab.com Patient Portal where you can schedule a free facility tour, see treatment costs and read verified patient reviews.{% endblock %}
+{% block og_type %}website{% endblock %}
+{% block og_title %}Patient Portal Registration{% endblock %}
+{% block og_description %}Create an account to schedule a free facility tour, see treatment costs and read verified patient reviews.{% endblock %}
+{% block meta_title_twitter %}Patient Portal Registration{% endblock %}
+{% block meta_description_twitter %}Schedule a free facility tour, see treatment costs and read verified patient reviews. Sign up today.{% endblock %}
+
+{% block header_scripts %}
+    {{ parent() }}
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+                "@id": "{{ 'project.url'|trans~'/'}}registration",
+                "name": "Patient Portal Registration"
+            }
+        }]
+    }
+    </script>
+
+    {% include 'home/structured_data/_home.html.twig'  with {
+        'title': 'Patient Portal Registration | Rehab.com',
+        'caption': 'Welcome to the Rehab.com Patient Portal where you can schedule a free facility tour, see treatment costs and read verified patient reviews.',
+        'image': 'https://www.rehab.com/assets/images/v2/us/homepage/hotlink-ok/rehab_com_og.jpg',
+        'url': app.request.uri
+    } only %}
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto:wght@300;400;500&display=swap"
+          as="style"
+          onload="this.onload=null;this.rel='stylesheet'"/>
+    <noscript>
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto:wght@300;400;500&display=swap"
+              type="text/css"/>
+    </noscript>
+    <link rel="preload"  as="style" onload="this.onload=null;this.rel='stylesheet'" href="{{ asset('build/footer.css') }}">
+    <link rel="preload" href="{{ asset('build/app_defer.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ asset('build/app_defer.css') }}"></noscript>
+    <link rel="stylesheet" href="{{ asset('build/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/patient-portal-symphony.css') }}">
+    <noscript><link rel="stylesheet" href="{{ asset('build/footer.css') }}"></noscript>
+    {% if burger_menu %}
+        <link rel="preload" href="{{ asset('assets/css/menu-mobile.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="{{ asset('assets/css/menu-mobile.css') }}"></noscript>
+    {% endif %}
+{% endblock %}
+
+{% block header %}
+    {{ include('about/elements/_new_header.html.twig') }}
+{% endblock %}
+
+{% block body %}
+    {% if burger_menu %}
+        {{ include('burger_menu/index.html.twig') }}
+    {% endif %}
+
+    <div class="portal-entry__wrapper">
+        <section class="care-team" id="care-team">
+            <div class="care-team__thumbnails">
+                {% set care_team = {
+                    1: {
+                        'url': '/assets/images/authors/jesse_hanson@2x.jpg',
+                        'alt': 'Photograph of Jesse Hanson',
+                    },
+                    2: {
+                        'url': '/assets/images/authors/simone_paget@2x.jpg',
+                        'alt': 'Photograph of Simon Paget',
+                    },
+                    3: {
+                        'url': '/assets/images/authors/melanie_curtin@2x.jpg',
+                        'alt': 'Photograph of Melanie Curtin',
+                    },
+                } %}
+                {% for thumbnail in care_team %}
+                    <img src="{{ thumbnail['url'] }}"
+                         class="care-team__thumbnail"
+                         height="105"
+                         width="105"
+                         alt="{{ thumbnail['alt'] }}" />
+                {% endfor %}
+            </div>
+            <div class="care-team__content">
+                <h2 class="care-team__title">Meet your care team</h2>
+                <ul class="care-team__list">
+                    <li class="care-team__list-item">Schedule a free facility tour</li>
+                    <li class="care-team__list-item">Compare treatment costs</li>
+                    <li class="care-team__list-item">Read patient reviews</li>
+                    <li class="care-team__list-item">See facility photos</li>
+                </ul>
+                <img src="{{ asset('/assets/images/patient-portal/calendar-with-user.svg') }}"
+                     class="care-team__icon"
+                     height="121"
+                     width="134"
+                     alt="Icon of a person pointing at a calendar" />
+            </div>
+        </section>
+        <section class="form-section registration-form">
+            <div class="form-section__text">
+                <h1>Sign Up</h1>
+                <p>It's free and confidential. Get help now.</p>
+            </div>
+            <form action="/users/register"
+                  method="post"
+                  name="registrationForm"
+                  id="registration-form"
+                  class="form-section__form">
+
+                <div id="form-error" class="alert alert-danger" {{ (error != null) ? 'style="display: block;"' : false }}>
+                    <span>
+                        {% if error %}
+                            {# Will show if the form has an error processing during form-submit. #}
+                            {{ error.messageKey }}
+                        {% else %}
+                            {# Will show for JavaScript inline-form errors. #}
+                            There was an error processing the form fields.
+                        {% endif %}
+                    </span>
+                </div>
+                <div class="form-section__inputs">
+                    <input type="text" class="form-section__input first-name" name="first_name" placeholder="First name" />
+                    <input type="text" class="form-section__input last-name" name="last_name" placeholder="Last name" />
+                </div>
+                <input type="tel" class="form-section__input telephone" id="mobile-phone" placeholder="Mobile number" name="mobile" />
+                <input type="text" class="form-section__input email" name="email" placeholder="Email" required />
+                <div class="form-section__dropdown" id="formSectionDropdown">
+                    <select name="form-section-vertical" id="vertical" class="form-section__select vertical" required>
+                        <option disabled hidden selected>I need help with</option>
+                        <option value="0">Addiction Treatment</option>
+                        <option value="8">Mental Health</option>
+                        <option value="7">Physical Therapy</option>
+                    </select>
+                </div>
+                <input name="password" type="password" minlength="8" class="form-section__input new-pass" placeholder="New password" required />
+                <span class="form-section__disclaimer">By clicking Sign up, you agree to our <a href="/legal/terms-of-use" target="_blank" title="View Rehab.com terms of use.">Terms</a> and <a href="/legal/privacy-policy" target="_blank" title="View Rehab.com privacy policy">Privacy Policy</a>.</span>
+                <button type="submit" class="btn btn--success form-section__submit">Sign up</button>
+                <div class="form-section__text text-center">
+                    {% if phase2 %}
+                        <a href="/forgot-password"
+                           class="form-section__forgot-pw"
+                           target="_blank"
+                           title="Attempt to reset your password">Forgot password?</a>
+                        <hr class="form-section__divider">
+                    {% endif %}
+                    Already have an account? <a href="/login" target="_self" title="Log into your account">Log in here</a>
+                </div>
+            </form>
+        </section>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {# Reset. #}
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}" defer></script>
+    <script src="{{ asset('assets/js/jquery-ui.min.js') }}" defer></script>
+    <script src="{{ asset('assets/js/browser.jquery.js') }}" defer></script>
+
+    {% if burger_menu %}
+        <script src="{{ asset('assets/js/burger-menu.js') }}" defer></script>
+    {% endif %}
+
+    <script src="{{ asset('assets/js/base.min.js') }}" defer></script>
+
+    {# Must come last. #}
+    <script src="{{ asset('build/patient-portal-symphony.js') }}" defer></script>
+{% endblock %}
